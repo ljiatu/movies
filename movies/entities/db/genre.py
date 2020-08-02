@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from movies.entities.db.base import Base
+from movies.entities.db.base_class import Base
 
 
 class Genre(Base):

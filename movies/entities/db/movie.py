@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, Float, Date, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
-from movies.entities.db.base import Base
+from movies.entities.db.base_class import Base
 
 movie_genres = Table(
     'movie_genres',
