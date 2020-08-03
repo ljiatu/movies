@@ -1,6 +1,9 @@
-from datetime import datetime
+from datetime import date
+from typing import List
 
 from pydantic import BaseModel
+
+from movies.entities.genre import Genre
 
 
 class Movie(BaseModel):
@@ -16,4 +19,8 @@ class Movie(BaseModel):
     title: str
     vote_average: float
     overview: str
-    release_date: datetime.date
+    release_date: date
+    genres: List[Genre]
+
+    class Config:
+        orm_mode = True

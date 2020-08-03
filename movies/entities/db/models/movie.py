@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, String, Boolean, Float, Date, Table, ForeignKey
+from sqlalchemy import Boolean, Column, Date, Float, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 
-from movies.entities.db.base_class import Base
+from movies.entities.db.models.base_class import Base
+from movies.entities.db.models.genre import Genre  # noqa
 
 movie_genres = Table(
     'movie_genres',

@@ -3,8 +3,8 @@ from typing import Any, Dict
 
 from sqlalchemy.orm import Session
 
-from movies.entities.db.genre import Genre
-from movies.entities.db.movie import Movie
+from movies.entities.db.models.genre import Genre
+from movies.entities.db.models.movie import Movie
 from movies.entities.db.session import SessionLocal
 
 
