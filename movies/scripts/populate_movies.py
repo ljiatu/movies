@@ -18,8 +18,12 @@ def populate_movies(s: Session):
         s.commit()
 
 
-def _parse_movie(movie: Dict[str, Any], genres_by_external_id: Dict[int, Genre]) -> Movie:
-    movie_obj = Movie(**{k: v for k, v in movie.items() if k not in ["id", "genre_ids"]})
+def _parse_movie(
+    movie: Dict[str, Any], genres_by_external_id: Dict[int, Genre]
+) -> Movie:
+    movie_obj = Movie(
+        **{k: v for k, v in movie.items() if k not in ["id", "genre_ids"]}
+    )
     movie_obj.external_id = movie["id"]
     movie_obj.genres = [genres_by_external_id[gid] for gid in movie["genre_ids"]]
     return movie_obj
