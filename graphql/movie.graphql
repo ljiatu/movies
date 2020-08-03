@@ -1,0 +1,21 @@
+type Movies {
+    getMovieById(externalId: Int!): Movie
+    getPopularMovies(limit: Int = 10): [Movie!]!
+}
+
+type Movie {
+    popularity: Float!
+    voteCount: Int!
+    video: Boolean!
+    posterPath: String
+    externalId: Int!
+    adult: Boolean!
+    backdropPath: String
+    originalLanguage: String
+    originalTitle: String
+    title: String!
+    voteAverage: Float
+    overview: String
+    releaseDate: String!
+    genres: [Genre!]!
+}

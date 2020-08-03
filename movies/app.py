@@ -1,23 +1,19 @@
-from typing import List
+from typing import Callable
 
-from fastapi import Depends, FastAPI
-from sqlalchemy.orm import Session
+from ariadne.asgi import GraphQL
+from fastapi import FastAPI, Request
 
-from movies.entities import movie
-from movies.entities.db import crud
 from movies.entities.db.session import SessionLocal
+from movies.query import schema
 
-app = FastAPI()
+app = FastAPI(debug=True)
+app.mount("/graphql", GraphQL(schema, debug=True))
 
 
-def get_session():
-    s = SessionLocal()
+@app.middleware("http")
+async def attach_db_session(request: Request, call_next: Callable):
     try:
-        yield s
+        request.state.db_session = SessionLocal()
+        return await call_next(request)
     finally:
-        s.close()
-
-
-@app.get("/movies/popular", response_model=List[movie.Movie])
-async def get_popular_movies(limit: int = 10, s: Session = Depends(get_session)):
-    return crud.get_popular_movies(s, limit)
+        request.state.db_session.close()

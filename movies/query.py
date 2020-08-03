@@ -1,22 +1,30 @@
-from ariadne import QueryType, make_executable_schema, ObjectType, load_schema_from_path
+from ariadne import ObjectType, QueryType, convert_kwargs_to_snake_case, load_schema_from_path, make_executable_schema
 from graphql import GraphQLResolveInfo
+
+from movies.entities.db import crud
 
 type_defs = load_schema_from_path("../graphql/")
 
 query = QueryType()
-user = ObjectType("User")
+movies = ObjectType("Movies")
 
 
-@query.field("hello")
-def resolve_hello(_, info: GraphQLResolveInfo):
-    request = info.context["request"]
-    user_agent = request.headers.get("user-agent", "guest")
-    return f"Hello, {user_agent}"
+@query.field("movies")
+async def resolve_movies(*_):
+    return movies
 
 
-@user.field("username")
-def resolve_username(obj, _):
-    return f"{obj.first_name} {obj.last_name}"
+@movies.field("getMovieById")
+@convert_kwargs_to_snake_case
+async def resolve_movie_by_external_id(_, info: GraphQLResolveInfo, external_id: int):
+    s = info.context["request"].state.db_session
+    return crud.get_movie_by_external_id(s, external_id)
 
 
-schema = make_executable_schema(type_defs, query, user)
+@movies.field("getPopularMovies")
+async def resolve_popular_movies(_, info: GraphQLResolveInfo, limit: int = 10):
+    s = info.context["request"].state.db_session
+    return crud.get_popular_movies(s, limit)
+
+
+schema = make_executable_schema(type_defs, query, movies)
