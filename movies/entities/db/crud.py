@@ -1,7 +1,8 @@
 from typing import List
 
-from movies.entities.db.models.movie import Movie
 from sqlalchemy.orm import Session
+
+from movies.entities.db.models.movie import Movie
 
 
 def get_movie(s: Session, id: int) -> Movie:
