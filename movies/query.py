@@ -16,9 +16,9 @@ async def resolve_movies(*_):
 
 @movies.field("getMovieById")
 @convert_kwargs_to_snake_case
-async def resolve_movie_by_external_id(_, info: GraphQLResolveInfo, external_id: int):
+async def resolve_movie_by_id(_, info: GraphQLResolveInfo, id: int):
     s = info.context["request"].state.db_session
-    return crud.get_movie_by_external_id(s, external_id)
+    return crud.get_movie(s, id)
 
 
 @movies.field("getPopularMovies")

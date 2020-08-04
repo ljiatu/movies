@@ -1,5 +1,5 @@
 type Movies {
-    getMovieById(externalId: Int!): Movie
+    getMovieById(id: Int!): Movie
     getPopularMovies(limit: Int = 10): [Movie!]!
 }
 

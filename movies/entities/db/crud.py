@@ -1,12 +1,11 @@
 from typing import List
 
+from movies.entities.db.models.movie import Movie
 from sqlalchemy.orm import Session
 
-from movies.entities.db.models.movie import Movie
 
-
-def get_movie_by_external_id(s: Session, external_id: int) -> Movie:
-    return s.query(Movie).filter(Movie.external_id == external_id).first()
+def get_movie(s: Session, id: int) -> Movie:
+    return s.query(Movie).get(id)
 
 
 def get_popular_movies(s: Session, limit: int = 10) -> List[Movie]:
