@@ -1,9 +1,10 @@
 type Movies {
-    getMovieById(id: Int!): Movie
-    getPopularMovies(limit: Int = 10): [Movie!]!
+    movie(id: Int!): Movie
+    popularMovies(limit: Int = 10): [Movie!]!
 }
 
 type Movie {
+    id: Int!
     popularity: Float!
     voteCount: Int!
     video: Boolean!
@@ -17,5 +18,13 @@ type Movie {
     voteAverage: Float
     overview: String
     releaseDate: String!
+    budget: Int
+    homepage: String
+    imdbId: String
+    revenue: Int!
+    runtime: Int
+    status: String
+    tagline: String
     genres: [Genre!]!
+    productionCompanies: [Company!]
 }

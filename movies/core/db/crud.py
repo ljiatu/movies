@@ -2,11 +2,11 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from movies.entities.db.models.movie import Movie
+from movies.core.db.models.movie import Movie
 
 
-def get_movie(s: Session, id: int) -> Movie:
-    return s.query(Movie).get(id)
+def get_movies(s: Session, ids: List[int]) -> List[Movie]:
+    return s.query(Movie).filter(Movie.id.in_(ids)).all()
 
 
 def get_popular_movies(s: Session, limit: int = 10) -> List[Movie]:

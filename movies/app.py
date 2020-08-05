@@ -3,8 +3,8 @@ from typing import Callable
 from ariadne.asgi import GraphQL
 from fastapi import FastAPI, Request
 
-from movies.entities.db.session import SessionLocal
-from movies.query import schema
+from movies.core.db.session import SessionLocal
+from movies.core.resolvers.query import schema
 
 app = FastAPI(debug=True)
 app.mount("/graphql", GraphQL(schema, debug=True))

@@ -1,11 +1,10 @@
 import json
 from typing import Any, Dict
 
+from movies.core.db.models.genre import Genre
+from movies.core.db.models.movie import Movie
+from movies.core.db.session import SessionLocal
 from sqlalchemy.orm import Session
-
-from movies.entities.db.models.genre import Genre
-from movies.entities.db.models.movie import Movie
-from movies.entities.db.session import SessionLocal
 
 
 def populate_movies(s: Session):

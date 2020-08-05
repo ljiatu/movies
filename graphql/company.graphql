@@ -1,0 +1,14 @@
+type Companies {
+    company(id: Int!): Company
+}
+
+type Company {
+    id: Int!
+    description: String
+    headquarters: String
+    homepage: String
+    logoPath: String
+    name: String
+    originCountry: String
+    parentCompany: Company
+}

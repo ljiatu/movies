@@ -1,6 +1,5 @@
+from movies.core.db.models.base_class import Base
 from sqlalchemy import Column, Integer, String
-
-from movies.entities.db.models.base_class import Base
 
 
 class Genre(Base):

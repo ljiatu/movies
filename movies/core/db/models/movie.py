@@ -1,14 +1,13 @@
+from movies.core.db.models.base_class import Base
+from movies.core.db.models.genre import Genre  # noqa
 from sqlalchemy import Boolean, Column, Date, Float, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 
-from movies.entities.db.models.base_class import Base
-from movies.entities.db.models.genre import Genre  # noqa
-
 movie_genres = Table(
-    'movie_genres',
+    "movie_genres",
     Base.metadata,
-    Column('movie_id', Integer, ForeignKey('movies.id')),
-    Column('genre_id', Integer, ForeignKey('genres.id'))
+    Column("movie_id", Integer, ForeignKey("movies.id")),
+    Column("genre_id", Integer, ForeignKey("genres.id")),
 )
 
 

@@ -1,3 +1,4 @@
 type Query {
     movies: Movies
+    companies: Companies
 }
