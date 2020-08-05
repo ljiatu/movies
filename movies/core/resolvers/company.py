@@ -6,8 +6,6 @@ from movies.core.entities.company import Company
 
 companies = ObjectType("Companies")
 
-URL_PATH = "company"
-
 
 @companies.field("company")
 async def resolve_company(_, info: GraphQLResolveInfo, id: int) -> Company:

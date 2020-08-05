@@ -1,15 +1,18 @@
 from typing import Any, Dict
 
-import requests
+from aiohttp import ClientResponseError, ClientSession
 from fastapi import HTTPException
 
 
-def get(query_url: str) -> Dict[str, Any]:
-    resp = requests.get(query_url)
-    if not resp.ok:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Request to TMDB API failed. Status code: {resp.status_code}. Error: {resp.json()}",
-        )
-
-    return resp.json()
+async def get(
+    session: ClientSession, query_url: str, params: Dict[str, str]
+) -> Dict[str, Any]:
+    async with session.get(query_url, params=params) as resp:
+        try:
+            resp.raise_for_status()
+            return await resp.json()
+        except ClientResponseError as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Request to TMDB API failed. Status code: {resp.status}. Error: {e}",
+            )

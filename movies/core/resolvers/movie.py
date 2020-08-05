@@ -2,6 +2,7 @@ from typing import Any, List, Optional
 
 from ariadne import ObjectType
 from graphql import GraphQLResolveInfo
+
 from movies.core.dataloaders.company_loader import CompanyLoader
 from movies.core.dataloaders.movie_loader import MovieLoader
 from movies.core.db import crud
