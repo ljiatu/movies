@@ -19,6 +19,10 @@ class CompanyLoader(AriadneDataLoader):
         async with aiohttp.ClientSession() as httpSession:
             params = {"api_key": API_KEY}
             companies = await asyncio.gather(
-                *(get(httpSession, url, params) for url in query_urls)
+                *(get(httpSession, url, params) for url in query_urls),
+                return_exceptions=True,
             )
-            return (Company(**c) for c in companies)
+            return (
+                Company(**c) if not isinstance(c, Exception) else None
+                for c in companies
+            )
