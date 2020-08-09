@@ -8,7 +8,7 @@ from ariadne import (
 from movies.core.resolvers.company import companies
 from movies.core.resolvers.movie import movie, movies
 
-type_defs = load_schema_from_path("../graphql/")
+type_defs = load_schema_from_path("graphql/")
 
 query = QueryType()
 
