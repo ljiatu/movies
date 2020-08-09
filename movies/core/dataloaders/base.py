@@ -6,7 +6,7 @@ from aiodataloader import DataLoader
 class AriadneDataLoader(DataLoader):
     context_key = None
 
-    def __init__(self, *args, context, **kwargs):
+    def __init__(self, *args, context: Dict, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.context = context
