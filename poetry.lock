@@ -708,6 +708,23 @@ version = "0.14.0"
 
 [[package]]
 category = "dev"
+description = "Automatically mock your HTTP interactions to simplify and speed up testing"
+name = "vcrpy"
+optional = false
+python-versions = ">=3.5"
+version = "4.1.0"
+
+[package.dependencies]
+PyYAML = "*"
+six = ">=1.5"
+wrapt = "*"
+
+[package.dependencies.yarl]
+python = ">=3.6"
+version = "*"
+
+[[package]]
+category = "dev"
 description = "Virtual Python Environment builder"
 name = "virtualenv"
 optional = false
@@ -733,6 +750,14 @@ python-versions = ">=3.6.1"
 version = "8.1"
 
 [[package]]
+category = "dev"
+description = "Module for decorators, wrappers and monkey patching."
+name = "wrapt"
+optional = false
+python-versions = "*"
+version = "1.12.1"
+
+[[package]]
 category = "main"
 description = "Yet another URL library"
 name = "yarl"
@@ -745,7 +770,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "5fee8c3f8c0905625d8548ca84fe53a6b8442e8158b834881a196d91e3ec4b17"
+content-hash = "9812ba9ea4a6528a37f8091b0adaf92d103f40036f9affd87f64a08c0c1512ee"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -1173,6 +1198,10 @@ uvloop = [
     {file = "uvloop-0.14.0-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:4315d2ec3ca393dd5bc0b0089d23101276778c304d42faff5dc4579cb6caef09"},
     {file = "uvloop-0.14.0.tar.gz", hash = "sha256:123ac9c0c7dd71464f58f1b4ee0bbd81285d96cdda8bc3519281b8973e3a461e"},
 ]
+vcrpy = [
+    {file = "vcrpy-4.1.0-py2.py3-none-any.whl", hash = "sha256:d833248442bbc560599add895c9ab0ef518676579e8dc72d8b0933bdb3880253"},
+    {file = "vcrpy-4.1.0.tar.gz", hash = "sha256:4138e79eb35981ad391406cbb7227bce7eba8bad788dcf1a89c2e4a8b740debe"},
+]
 virtualenv = [
     {file = "virtualenv-20.0.30-py2.py3-none-any.whl", hash = "sha256:8cd7b2a4850b003a11be2fc213e206419efab41115cc14bca20e69654f2ac08e"},
     {file = "virtualenv-20.0.30.tar.gz", hash = "sha256:7b54fd606a1b85f83de49ad8d80dbec08e983a2d2f96685045b262ebc7481ee5"},
@@ -1200,6 +1229,9 @@ websockets = [
     {file = "websockets-8.1-cp38-cp38-win32.whl", hash = "sha256:e898a0863421650f0bebac8ba40840fc02258ef4714cb7e1fd76b6a6354bda36"},
     {file = "websockets-8.1-cp38-cp38-win_amd64.whl", hash = "sha256:f8a7bff6e8664afc4e6c28b983845c5bc14965030e3fb98789734d416af77c4b"},
     {file = "websockets-8.1.tar.gz", hash = "sha256:5c65d2da8c6bce0fca2528f69f44b2f977e06954c8512a952222cea50dad430f"},
+]
+wrapt = [
+    {file = "wrapt-1.12.1.tar.gz", hash = "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"},
 ]
 yarl = [
     {file = "yarl-1.5.1-cp35-cp35m-macosx_10_14_x86_64.whl", hash = "sha256:db6db0f45d2c63ddb1a9d18d1b9b22f308e52c83638c26b422d520a815c4b3fb"},

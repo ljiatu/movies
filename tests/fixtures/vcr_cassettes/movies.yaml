@@ -1,0 +1,357 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/movie/300671?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: "{\"adult\":false,\"backdrop_path\":\"/ayDMYGUNVvXS76wQgFwTiUIDNb5.jpg\"\
+        ,\"belongs_to_collection\":null,\"budget\":50000000,\"genres\":[{\"id\":28,\"\
+        name\":\"Action\"},{\"id\":36,\"name\":\"History\"},{\"id\":53,\"name\":\"\
+        Thriller\"}],\"homepage\":\"http://www.thirteenhoursmovie.com/\",\"id\":300671,\"\
+        imdb_id\":\"tt4172430\",\"original_language\":\"en\",\"original_title\":\"\
+        13 Hours: The Secret Soldiers of Benghazi\",\"overview\":\"An American Ambassador\
+        \ is killed during an attack at a U.S. compound in Libya as a security team\
+        \ struggles to make sense out of the chaos.\",\"popularity\":18.009,\"poster_path\"\
+        :\"/4qnEeVPM8Yn5dIVC4k4yyjrUXeR.jpg\",\"production_companies\":[{\"id\":4,\"\
+        logo_path\":\"/fycMZt242LVjagMByZOLUGbCvv3.png\",\"name\":\"Paramount\",\"\
+        origin_country\":\"US\"},{\"id\":787,\"logo_path\":\"/cCefBs1t7jxtiz3eCxBp9yxrxGx.png\"\
+        ,\"name\":\"3 Arts Entertainment\",\"origin_country\":\"US\"},{\"id\":6734,\"\
+        logo_path\":null,\"name\":\"Bay Films\",\"origin_country\":\"\"},{\"id\":19108,\"\
+        logo_path\":null,\"name\":\"Latina Pictures\",\"origin_country\":\"MT\"},{\"\
+        id\":19477,\"logo_path\":null,\"name\":\"Dune Films\",\"origin_country\":\"\
+        MA\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United\
+        \ States of America\"}],\"release_date\":\"2016-01-13\",\"revenue\":69411370,\"\
+        runtime\":144,\"spoken_languages\":[{\"iso_639_1\":\"ar\",\"name\":\"\u0627\
+        \u0644\u0639\u0631\u0628\u064A\u0629\"},{\"iso_639_1\":\"en\",\"name\":\"\
+        English\"}],\"status\":\"Released\",\"tagline\":\"When everything went wrong,\
+        \ six men had the courage to do what was right.\",\"title\":\"13 Hours: The\
+        \ Secret Soldiers of Benghazi\",\"video\":false,\"vote_average\":7.1,\"vote_count\"\
+        :2061}"
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '434'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:23 GMT
+      ETag:
+      - W/"64a8ee421323d182e57691ad253b1149"
+      Last-Modified:
+      - Mon, 10 Aug 2020 22:50:23 GMT
+      Server:
+      - openresty
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 affc2fdf5df0fb7bfb7e10bab49bc714.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - By2lkjeUErX24kzS9QIW8bLsuZlDY8w8W89K6DG8OMaj7JNr1QytkQ==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - HIT
+      x-memc-age:
+      - '18174'
+      x-memc-expires:
+      - '3426'
+      x-memc-key:
+      - ae5104d1ad5900a054ff95838b14477a
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/movie/300671?api_key=b6dcd3ce6d71f843e91506c263fa678e
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/company/19108?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"description":"","headquarters":"","homepage":"http://www.filmmalta.com","id":19108,"logo_path":null,"name":"Latina
+        Pictures","origin_country":"MT","parent_company":null}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '433'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '171'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      ETag:
+      - W/"966befb35d73a0422600ca5fabbecda7"
+      Last-Modified:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 67c5370c4ea2e5f9f865960e31ef2d86.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - dimKGqSeuUsm2FiXiBk1DCvDhD_fflh9QCnxJfs0Rpg7FpfQ1c_DJQ==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - HIT
+      x-memc-age:
+      - '801'
+      x-memc-expires:
+      - '20799'
+      x-memc-key:
+      - bd33a1a1a24d874c153a416e9b15b28c
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/company/19108?api_key=b6dcd3ce6d71f843e91506c263fa678e
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/company/19477?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"description":"","headquarters":"Marrakech ","homepage":"https://www.dunefilms.com","id":19477,"logo_path":null,"name":"Dune
+        Films","origin_country":"MA","parent_company":null}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '433'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '177'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      ETag:
+      - W/"1225c276456ade4e87fdf790c841b7c5"
+      Last-Modified:
+      - Sun, 09 Aug 2020 07:16:53 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 dfd0a9d31e7c22e1ecdaa3c92763b966.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - DgEQIgU2-qF4JgWvTxT1nvTyJFk8jKxSdATUk60OiY2_jgLOwvO2CA==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - MISS, STORE
+      x-memc-age:
+      - '0'
+      x-memc-expires:
+      - '21600'
+      x-memc-key:
+      - 47e59777ea65382af8d5a4f82be521f8
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/company/19477?api_key=b6dcd3ce6d71f843e91506c263fa678e
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/company/4?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"description":"","headquarters":"Hollywood, California","homepage":"http://www.paramount.com/","id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US","parent_company":{"name":"Viacom
+        International","id":5308,"logo_path":null}}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '433'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '267'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      ETag:
+      - W/"e0101a34c57e244a50e10fe7dce81bb2"
+      Last-Modified:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 24f0a9deed9c91bc74bc40a70ff68415.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 0vLto8elyzuD_saDnnKKUe7vFRVMve_SmAwPXDiGxrOTnplxJn3zFA==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - MISS, STORE
+      x-memc-age:
+      - '0'
+      x-memc-expires:
+      - '21600'
+      x-memc-key:
+      - b1496d0c0525243d0e4cf6ae53c92976
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/company/4?api_key=b6dcd3ce6d71f843e91506c263fa678e
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/company/787?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"description":"","headquarters":"Beverly Hills, California","homepage":"http://www.3arts.com","id":787,"logo_path":"/cCefBs1t7jxtiz3eCxBp9yxrxGx.png","name":"3
+        Arts Entertainment","origin_country":"US","parent_company":null}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '433'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '225'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      ETag:
+      - W/"a1e7141b23962646e3773ae4c63a7c58"
+      Last-Modified:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 5b060cb62fb310be9e41fb3218654679.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - he6vg0k2MH8yuJ_w-WM9K_Etq7Y6sZlDQST0t55SBmvxdR8rDDRJUg==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - MISS, STORE
+      x-memc-age:
+      - '0'
+      x-memc-expires:
+      - '21600'
+      x-memc-key:
+      - 8b0ed090f06d866ef9bb92ff117e2126
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/company/787?api_key=b6dcd3ce6d71f843e91506c263fa678e
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.themoviedb.org/3/company/6734?api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"description":"","headquarters":"","homepage":"","id":6734,"logo_path":null,"name":"Bay
+        Films","origin_country":null,"parent_company":null}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Age:
+      - '434'
+      Cache-Control:
+      - public, max-age=21600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '140'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      ETag:
+      - W/"a560ebc53084e154282c9836e7c8ba8e"
+      Last-Modified:
+      - Mon, 10 Aug 2020 22:50:24 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 5b060cb62fb310be9e41fb3218654679.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 70UQhUpcSkpolOkwC2J_FXhf1bTb85ID1fSky3Ipv_cD4dZ-Lghh6A==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Hit from cloudfront
+      x-memc:
+      - HIT
+      x-memc-age:
+      - '110'
+      x-memc-expires:
+      - '21490'
+      x-memc-key:
+      - 10a3d2fbbe30085d8ed51f326cee8d40
+    status:
+      code: 200
+      message: OK
+    url: https://api.themoviedb.org/3/company/6734?api_key=b6dcd3ce6d71f843e91506c263fa678e
+version: 1

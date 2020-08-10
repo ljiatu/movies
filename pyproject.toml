@@ -27,6 +27,7 @@ aresponses = "^2.0.0"
 pytest-mock = "^3.2.0"
 httpx = "^0.14.0"
 sqlalchemy-utils = "^0.36.8"
+vcrpy = "^4.1.0"
 
 [tool.isort]
 profile = "black"
