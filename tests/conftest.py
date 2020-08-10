@@ -38,9 +38,7 @@ def db_session(db_engine: Engine):
     # then each time that SAVEPOINT ends, reopen it
     @event.listens_for(db_session, "after_transaction_end")
     def restart_savepoint(session: Session, transaction: SessionTransaction):
-        if (
-            transaction.nested and not transaction._parent.nested
-        ):  # pylint: disable=W0212
+        if transaction.nested and not transaction._parent.nested:
 
             # ensure that state is expired the way
             # session.commit() at the top level normally does
