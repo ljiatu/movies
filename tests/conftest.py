@@ -1,11 +1,12 @@
 import pytest
 from sqlalchemy import create_engine, event
 from sqlalchemy.engine import Engine
-from sqlalchemy.orm import Session, scoped_session, sessionmaker
+from sqlalchemy.orm import Session
 from sqlalchemy.orm.session import SessionTransaction
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
 from movies.core.db.models.base_class import Base
+from movies.core.db.session import create_db_session
 from tests.settings import TEST_DB_URL
 
 
@@ -30,7 +31,7 @@ def db_session(db_engine: Engine):
     trans = connection.begin()
 
     # bind an individual Session to the connection
-    db_session = _create_db_session(connection)
+    db_session = create_db_session(connection)()
 
     # start the session in a SAVEPOINT...
     db_session.begin_nested()
@@ -67,13 +68,7 @@ def unsafe_db_session(db_engine: Engine):
         This is useful to make fixtures that are visible in other sessions
         If we made fixtures inside a transaction, they would not be visible in other sessions
     """
-    db_session = _create_db_session(db_engine)
+    db_session = create_db_session(db_engine)()
 
     yield db_session
     db_session.close()
-
-
-def _create_db_session(engine: Engine) -> Session:
-    db_session = scoped_session(sessionmaker(bind=engine))()
-    Base.metadata.bind = engine  # type: ignore
-    return db_session
