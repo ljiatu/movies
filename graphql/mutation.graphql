@@ -1,0 +1,7 @@
+type Mutation {
+    movieMutations: MovieMutations
+}
+
+type MovieMutations {
+    rate(movieId: Int!, rating: Float!): Boolean!
+}

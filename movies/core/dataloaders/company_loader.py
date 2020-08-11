@@ -6,7 +6,7 @@ import aiohttp
 from movies.core.clients.tmdb import get
 from movies.core.dataloaders.base import AriadneDataLoader
 from movies.core.entities.company import Company
-from movies.settings import TMDB_API_KEY, TMDB_BASE_URL
+from movies.settings import TMDB_BASE_URL
 
 URL_PATH = "company"
 
@@ -17,10 +17,8 @@ class CompanyLoader(AriadneDataLoader):
     async def batch_load_fn(self, keys: Iterable[int]) -> Iterable[Company]:
         query_urls = [f"{TMDB_BASE_URL}/{URL_PATH}/{k}" for k in keys]
         async with aiohttp.ClientSession() as httpSession:
-            params = {"api_key": TMDB_API_KEY}
             companies = await asyncio.gather(
-                *(get(httpSession, url, params) for url in query_urls),
-                return_exceptions=True,
+                *(get(httpSession, url) for url in query_urls), return_exceptions=True,
             )
             return (
                 Company(**c) if not isinstance(c, Exception) else None

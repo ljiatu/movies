@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body:
+      value: 10.0
+    headers: {}
+    method: POST
+    uri: https://api.themoviedb.org/3/movie/300671/rating?guest_session_id=74f31bdc6b3ad840a0dafd22443ce171&api_key=b6dcd3ce6d71f843e91506c263fa678e
+  response:
+    body:
+      string: '{"success":true,"status_code":12,"status_message":"The item/record
+        was updated successfully."}'
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '94'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 11 Aug 2020 05:28:30 GMT
+      Server:
+      - openresty
+      Via:
+      - 1.1 3501d8dcaf445148f53da1c92c862f1f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 5HV0ngE-L1vRRj33oS-dZIYCjOFK4paPTVSb4mdSm1ay7TKhOiaTLw==
+      X-Amz-Cf-Pop:
+      - SFO20-C1
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - public, max-age=0
+      etag:
+      - W/"04302547257ccb7e68844cdd59055002"
+      last-modified:
+      - Tue, 11 Aug 2020 05:28:30 GMT
+    status:
+      code: 201
+      message: Created
+    url: https://api.themoviedb.org/3/movie/300671/rating?guest_session_id=74f31bdc6b3ad840a0dafd22443ce171&api_key=b6dcd3ce6d71f843e91506c263fa678e
+version: 1

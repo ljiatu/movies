@@ -11,6 +11,8 @@ from sqlalchemy.orm import Session
 from movies.api import app
 from movies.core.db.models.movie import Movie
 
+TEST_APP_BASE_URL = "http://test"
+
 
 @pytest.fixture
 def db_movies() -> List[Movie]:
@@ -67,7 +69,7 @@ async def test_resolve_movie(
 
     # Replace the db_engine used by the app with the test db_engine.
     mocker.patch.object(app, "db_engine", db_engine)
-    async with AsyncClient(app=app.app, base_url="http://test") as client:
+    async with AsyncClient(app=app.app, base_url=TEST_APP_BASE_URL) as client:
         response = await client.post("/graphql", json={"query": query})
 
     assert response.status_code == 200
@@ -76,3 +78,35 @@ async def test_resolve_movie(
     assert data["movies"]["movie"]["popularity"] == 18.009
     assert not data["movies"]["movie"]["adult"]
     assert data["movies"]["movie"]["productionCompanies"][0]["name"] == "Paramount"
+
+
+@pytest.mark.asyncio
+@vcr.use_cassette(
+    "tests/fixtures/vcr_cassettes/movie_mutations.yaml", ignore_hosts=["test"]
+)
+async def test_rate_movie():
+    mutation = """
+    mutation rateMovie($movieId: Int!, $rating: Float!) {
+        movieMutations {
+            rate(movieId: $movieId, rating: $rating)
+        }
+    }
+    """
+    variables = {
+        "movieId": 300671,
+        "rating": 10.0,
+    }
+    async with AsyncClient(app=app.app, base_url=TEST_APP_BASE_URL) as client:
+        response = await client.post(
+            "/graphql",
+            json={
+                "operationName": "rateMovie",
+                "query": mutation,
+                "variables": variables,
+            },
+        )
+
+    assert response.status_code == 200
+    data = response.json()["data"]
+    assert data is not None
+    assert data["movieMutations"]["rate"] is True

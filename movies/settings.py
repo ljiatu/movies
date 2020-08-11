@@ -7,3 +7,6 @@ TMDB_API_VERSION = os.environ.get("TMDB_API_VERSION", "3")
 TMDB_BASE_URL = os.environ.get(
     "TMDB_BASE_URL", f"https://{TMDB_API_HOST}/{TMDB_API_VERSION}"
 )
+TMDB_GUEST_SESSION_ID = os.environ.get(
+    "TMDB_GUEST_SESSION_ID", "74f31bdc6b3ad840a0dafd22443ce171"
+)
